@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../Css/structure.css";
 
 const NavBar = () => {
@@ -16,9 +17,9 @@ const NavBar = () => {
                 </a>
               </li>
               <li className="nav_item">
-                <a href="#about" className="nav_link">
+                <Link to="/about" className="nav_link">
                   <i className="uil uil-user nav_icon"></i> About
-                </a>
+                </Link>
               </li>
               <li className="nav_item">
                 <a href="#skills" className="nav_link">

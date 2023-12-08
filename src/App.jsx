@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="">
       <NavBar />
-      <Outlet />
+      <div className="h-[calc(100vh-72px)]">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
