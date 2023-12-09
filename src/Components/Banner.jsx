@@ -15,7 +15,7 @@ const Banner = () => {
             <div className="home_img">
               <img
                 src="https://i.ibb.co/jZztpQ5/Linkdin.jpg"
-                className="rounded-full w-80 h-80"
+                className="rounded-full w-[400px] h-[400px]"
                 alt=""
               />
             </div>

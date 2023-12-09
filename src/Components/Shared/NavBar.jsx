@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../../Css/structure.css";
 
 const NavBar = () => {
@@ -12,34 +12,34 @@ const NavBar = () => {
           <div className="nav_menu" id="nav-menu">
             <ul className="nav_list ">
               <li className="nav_item">
-                <a href="#home" className="nav_link active_link">
+                <NavLink to="/" className="nav_link active_link">
                   <i className="uil uil-estate nav_icon"></i> Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav_item">
-                <Link to="/about" className="nav_link">
+                <NavLink to="/about" className="nav_link">
                   <i className="uil uil-user nav_icon"></i> About
-                </Link>
+                </NavLink>
               </li>
               <li className="nav_item">
-                <a href="#skills" className="nav_link">
+                <NavLink to="/skills" className="nav_link">
                   <i className="uil uil-file-alt nav_icon"></i> Skills
-                </a>
+                </NavLink>
               </li>
-              <li className="nav_item">
+              {/* <li className="nav_item">
                 <a href="#services" className="nav_link">
                   <i className="uil uil-briefcase-alt nav_icon"></i> Services
                 </a>
-              </li>
+              </li> */}
               <li className="nav_item">
-                <a href="#portfolio" className="nav_link">
+                <NavLink to="/portfolio" className="nav_link">
                   <i className="uil uil-scenery nav_icon"></i> Portfolio
-                </a>
+                </NavLink>
               </li>
               <li className="nav_item">
-                <a href="#contact" className="nav_link">
+                <NavLink to="/contact" className="nav_link">
                   <i className="uil uil-comment-message nav_icon"></i> Contact
-                </a>
+                </NavLink>
               </li>
             </ul>
             <i className="uil uil-times nav_close" id="nav-close"></i>

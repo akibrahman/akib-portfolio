@@ -265,7 +265,7 @@ img {
 }
 
 /* Active link */
-.active_link {
+.active {
   color: var(--first-color);
 }
 
@@ -474,16 +474,19 @@ img {
   background-color: var(--first-color);
 }
 .skills_html {
-  width: 70%;
+  width: 90%;
 }
 .skills_css {
-  width: 60%;
+  width: 87%;
 }
 .skills_js {
-  width: 10%;
+  width: 60%;
 }
 .skills_react {
-  width: 85%;
+  width: 80%;
+}
+.skills_tw {
+  width: 90%;
 }
 .skills_php {
   width: 5%;
@@ -494,17 +497,20 @@ img {
 .skills_firebase {
   width: 5%;
 }
-.skills_python {
-  width: 45%;
+.skills_express {
+  width: 40%;
 }
-.skills_figma {
-  width: 60%;
+.skills_node {
+  width: 30%;
 }
-.skills_sketch {
-  width: 50%;
+.skills_mongo {
+  width: 65%;
 }
-.skills_photoshop {
-  width: 75%;
+.skills_firebase {
+  width: 80%;
+}
+.skills_jwt {
+  width: 90%;
 }
 .skills_close .skills_list {
   height: 0;
