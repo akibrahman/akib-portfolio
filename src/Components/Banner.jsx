@@ -1,4 +1,8 @@
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import "../Css/structure.css";
+import Social from "./Shared/Social";
 
 const Banner = () => {
   return (
@@ -7,15 +11,15 @@ const Banner = () => {
         <div className="home_container container grid">
           <div className="home_content grid">
             <div className="home_social">
-              <a href="https://facebook.com/akib.rahmann" target="_akib">
+              {/* <a href="https://facebook.com/akib.rahmann" target="_akib">
                 <i className="uil uil-facebook-f"></i>
-              </a>
+              </a> */}
             </div>
 
             <div className="home_img">
               <img
                 src="https://i.ibb.co/jZztpQ5/Linkdin.jpg"
-                className="rounded-full w-[400px] h-[400px]"
+                className="rounded-full w-[450px] h-[450px]"
                 alt=""
               />
             </div>
@@ -30,9 +34,21 @@ const Banner = () => {
                 a meticulous eye for detail, ensuring pixel-perfect designs and
                 flawless execution.
               </p>
-              <a href="#contact" className="button home_button button_flex">
-                Hire Me <i className="uil uil-message button_icon"></i>
-              </a>
+              <div className="w-max">
+                <div className="flex gap-4">
+                  <Link className="button home_button button_flex active:scale-75 flex gap-3 transition-all">
+                    Resume{" "}
+                    <FaDownload className="icon transition duration-500" />
+                  </Link>
+                  <Link className="button home_button button_flex active:scale-75 flex gap-3 transition-all">
+                    Hire Me
+                    <FaTelegramPlane className="icon transition duration-500" />
+                  </Link>
+                </div>
+                <div className="mt-8 flex justify-center">
+                  <Social />
+                </div>
+              </div>
             </div>
           </div>
         </div>
