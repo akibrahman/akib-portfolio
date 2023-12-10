@@ -2,9 +2,32 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import "../Css/structure.css";
+import resume from "../assets/pdf/resume.pdf";
 import Social from "./Shared/Social";
 
 const Banner = () => {
+  const handleDownload = () => {
+    // Construct the URL for the resume file
+    // const resumeUrl = process.env.PUBLIC_URL + '/resume.pdf';
+
+    // Create a link element
+    const downloadLink = document.createElement("a");
+
+    // Set the href attribute to the resume URL
+    downloadLink.href = resume;
+
+    // Set the download attribute with the desired file name
+    downloadLink.download = "resume.pdf";
+
+    // Append the link to the document body
+    document.body.appendChild(downloadLink);
+
+    // Trigger the click event on the link to start the download
+    downloadLink.click();
+
+    // Remove the link from the document body after the download is initiated
+    document.body.removeChild(downloadLink);
+  };
   return (
     <div className="w-[90%] mx-auto">
       <section className="home section p-0" id="home">
@@ -36,11 +59,14 @@ const Banner = () => {
               </p>
               <div className="w-max">
                 <div className="flex gap-4">
-                  <Link className="button home_button button_flex active:scale-75 flex gap-3 transition-all">
-                    Resume{" "}
+                  <Link
+                    onClick={handleDownload}
+                    className="button home_button button_flex active:scale-75 flex gap-3 transition duration-300"
+                  >
+                    Resume
                     <FaDownload className="icon transition duration-500" />
                   </Link>
-                  <Link className="button home_button button_flex active:scale-75 flex gap-3 transition-all">
+                  <Link className="button home_button button_flex active:scale-75 flex gap-3 transition duration-300">
                     Hire Me
                     <FaTelegramPlane className="icon transition duration-500" />
                   </Link>

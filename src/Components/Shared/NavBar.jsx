@@ -12,32 +12,32 @@ const NavBar = () => {
           <div className="nav_menu" id="nav-menu">
             <ul className="nav_list ">
               <li className="nav_item">
-                <NavLink to="/" className="nav_link text-lg">
+                <NavLink to="/" className="nav_link text-base">
                   <i className="uil uil-estate nav_icon"></i> Home
                 </NavLink>
               </li>
               <li className="nav_item">
-                <NavLink to="/about" className="nav_link text-lg">
+                <NavLink to="/about" className="nav_link text-base">
                   <i className="uil uil-user nav_icon"></i> About
                 </NavLink>
               </li>
               <li className="nav_item">
-                <NavLink to="/skills" className="nav_link text-lg">
+                <NavLink to="/skills" className="nav_link text-base">
                   <i className="uil uil-file-alt nav_icon"></i> Skills
                 </NavLink>
               </li>
               {/* <li className="nav_item">
-                <a href="#services" className="nav_link text-lg">
+                <a href="#services" className="nav_link text-base">
                   <i className="uil uil-briefcase-alt nav_icon"></i> Services
                 </a>
               </li> */}
               <li className="nav_item">
-                <NavLink to="/portfolio" className="nav_link text-lg">
+                <NavLink to="/portfolio" className="nav_link text-base">
                   <i className="uil uil-scenery nav_icon"></i> Portfolio
                 </NavLink>
               </li>
               <li className="nav_item">
-                <NavLink to="/contact" className="nav_link text-lg">
+                <NavLink to="/contact" className="nav_link text-base">
                   <i className="uil uil-comment-message nav_icon"></i> Contact
                 </NavLink>
               </li>
