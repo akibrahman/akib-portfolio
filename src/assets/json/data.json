@@ -2,7 +2,7 @@
   {
     "title": "MealMaster",
     "description": "I have named it MealMaster and this one is my most great project. This project basically can manage the hostel meal system for the students. A package system for properly managing the meal system",
-    "image": "../../public/p1.png",
+    "image": "./p1.png",
     "client_link": "https://github.com/akibrahman/meal-master-akib",
     "server_link": "https://github.com/akibrahman/meal-master-server",
     "live_link": "https://mealmaster-akib.web.app",
@@ -12,7 +12,7 @@
   {
     "title": "Job Nest",
     "description": "JobNest is a job searching website where you can easily add a job, also you can apply a job. This system is now under construction again because I am updating this site and going to implement Admin Panel system",
-    "image": "../../public/p2.png",
+    "image": "./p2.png",
     "client_link": "https://github.com/akibrahman/job-nest-akib",
     "server_link": "https://github.com/akibrahman/job-nest-server-akib",
     "live_link": "https://jobnest-akib.web.app",
@@ -22,7 +22,7 @@
   {
     "title": "Brand Shop",
     "description": " I named this Project Obsidian. This is a brand shop website. After Authentication, You can Add a product, Edit and even Add to Cart. This was my first project with BackEnd. Within Some Days, I will re-modify this project and i will make this project more Dynamic",
-    "image": "../../public/p3.png",
+    "image": "./p3.png",
     "client_link": "https://github.com/akibrahman/brand-shop-obsidian",
     "server_link": "https://github.com/akibrahman/brand-shop-obsidian-server",
     "live_link": "https://brand-shop-akib.web.app",

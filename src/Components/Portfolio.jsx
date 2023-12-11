@@ -1,14 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { FaEye } from "react-icons/fa6";
+import { FaArrowRight, FaEye } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 const Portfolio = () => {
+  const axiosInstance = useAxiosPublic();
+
   const { data } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
-      const { data } = await axios.get("../../public/data.json");
-      const projects = data.filter((d) => d.status == "ready");
+      const { data } = await axiosInstance.get("/all-projects");
+      const projects = data.filter((project) => project.status == "ready");
       return projects;
     },
   });
@@ -17,9 +19,9 @@ const Portfolio = () => {
   return (
     <div className="w-[90%] mx-auto mt-20 ">
       <div className="flex flex-col gap-10">
-        {data.map((project, i) => (
+        {data.map((project) => (
           <div
-            key={i}
+            key={project._id}
             className="flex items-center gap-10 border-l-[5px] pl-4 border-primary py-5"
           >
             <img
@@ -57,10 +59,21 @@ const Portfolio = () => {
               <Link target="_blank" to={project.live_link}>
                 <FaEye className="bg-primary text-white w-8 h-8 p-2 rounded-full cursor-pointer" />
               </Link>
-              {/* <FaArrowRight className="bg-primary text-white w-8 h-8 p-2 rounded-full cursor-pointer" /> */}
+              <Link to={`/project/${project._id}`}>
+                <FaArrowRight className="bg-primary text-white w-8 h-8 p-2 rounded-full cursor-pointer" />
+              </Link>
             </div>
           </div>
         ))}
+        <button
+          onClick={async () => {
+            const data = await axiosInstance.post("/test");
+            console.log(data.data);
+          }}
+          className="bg-primary px-3 py-1 text-white rounded-md"
+        >
+          Add
+        </button>
       </div>
     </div>
   );

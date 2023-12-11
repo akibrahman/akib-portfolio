@@ -3,6 +3,7 @@ import App from "../App";
 import About from "../Components/About";
 import Contact from "../Components/Contact";
 import Portfolio from "../Components/Portfolio";
+import ProjectDetails from "../Components/ProjectDetails";
 import Skills from "../Components/Skills";
 import HomePgae from "../Pages/HomePgae";
 
@@ -26,6 +27,10 @@ export const Routes = createBrowserRouter([
       {
         path: "/portfolio",
         element: <Portfolio />,
+      },
+      {
+        path: "/project/:id",
+        element: <ProjectDetails />,
       },
       {
         path: "/contact",
