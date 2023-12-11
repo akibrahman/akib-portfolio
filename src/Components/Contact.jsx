@@ -1,6 +1,47 @@
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 import Social from "./Shared/Social";
 
 const Contact = () => {
+  const handleContact = async (event) => {
+    event.preventDefault();
+    const data = event.target;
+    mail(
+      data.name.value,
+      data.email.value,
+      data.message.value,
+      data.project.value
+    )
+      .then(() => {
+        console.log("E-mail Sent");
+        toast.success("Your message is sent");
+        data.reset();
+      })
+      .catch(() => {
+        console.log("Something Went Wrong");
+      });
+  };
+  const mail = async (name, email, message, project) => {
+    emailjs
+      .send(
+        "service_g6cvxq2",
+        "template_ig89126",
+        {
+          v_name: name,
+          v_email: email,
+          v_message: message,
+          v_project: project,
+          reply_to: email,
+        },
+        "7KRV2RNgMFhMkRBxQ"
+      )
+      .then((res) => {
+        return res;
+      })
+      .catch((error) => {
+        return error;
+      });
+  };
   return (
     <div className="w-[90%] mx-auto mt-2">
       <section className="contact section p-0" id="contact">
@@ -57,18 +98,23 @@ const Contact = () => {
                 width="285"
                 height="252"
                 className="w-full rounded-lg"
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
-          <form action="" className="contact_form grid">
+          <form
+            onSubmit={handleContact}
+            action=""
+            className="contact_form grid"
+          >
             <div className="contact_inputs grid">
               <div className="contact_content">
                 <label className="contact_label">Name</label>
                 <input
-                  id="f_name"
+                  // id="f_name"
+                  name="name"
                   type="text"
                   className="contact_input"
                   required
@@ -77,7 +123,8 @@ const Contact = () => {
               <div className="contact_content">
                 <label className="contact_label">Email</label>
                 <input
-                  id="f_email"
+                  // id="f_email"
+                  name="email"
                   type="email"
                   className="contact_input"
                   required
@@ -87,7 +134,8 @@ const Contact = () => {
             <div className="contact_content">
               <label className="contact_label">Project</label>
               <input
-                id="f_project"
+                // id="f_project"
+                name="project"
                 type="text"
                 className="contact_input"
                 required
@@ -96,7 +144,8 @@ const Contact = () => {
             <div className="contact_content">
               <label className="contact_label">Message</label>
               <textarea
-                id="f_msg"
+                // id="f_msg"
+                name="message"
                 cols="0"
                 rows="7"
                 className="contact_input"

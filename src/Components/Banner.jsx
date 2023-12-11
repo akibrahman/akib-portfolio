@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
 import "../Css/structure.css";
+import { ImageComponent } from "../Utils/ImageComponent";
 import expressLogo from "../assets/icons/express.png";
 import reactLogo from "../assets/icons/react.png";
 import resume from "../assets/pdf/resume.pdf";
@@ -42,18 +43,23 @@ const Banner = () => {
             </div>
 
             <div className="home_img">
-              <motion.img
+              {/* <motion.img
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.9 }}
                 src="https://i.ibb.co/jZztpQ5/Linkdin.jpg"
                 className="rounded-full w-[450px] h-[450px]"
                 alt=""
+              /> */}
+              <ImageComponent
+                src={"https://i.ibb.co/jZztpQ5/Linkdin.jpg"}
+                alt={"Akib Rahman"}
+                classes="rounded-full w-[450px] h-[450px]"
               />
             </div>
             <div className="home_data">
               <motion.h1
-                initial={{ opacity: 0, x: 250 }}
+                initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ type: "spring" }}
                 className="home_title"

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ImageComponent } from "../Utils/ImageComponent";
 
 const About = () => {
   return (
@@ -7,13 +8,18 @@ const About = () => {
         <h2 className="section_title">About Me</h2>
         <span className="section_subtitle">My Introduction</span>
         <div className="about_container container flex items-start">
-          <motion.img
+          {/* <motion.img
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", duration: 0.3 }}
             src="https://i.ibb.co/jZztpQ5/Linkdin.jpg"
             className="w-[350px] rounded-md"
             alt=""
+          /> */}
+          <ImageComponent
+            src={"https://i.ibb.co/jZztpQ5/Linkdin.jpg"}
+            alt={"Akib Rahman"}
+            classes={"rounded-md"}
           />
           <motion.div
             initial={{ opacity: 0, x: -250 }}
