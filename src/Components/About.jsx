@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const About = () => {
   return (
     <div className="w-[90%] mx-auto">
@@ -5,12 +7,20 @@ const About = () => {
         <h2 className="section_title">About Me</h2>
         <span className="section_subtitle">My Introduction</span>
         <div className="about_container container flex items-start">
-          <img
+          <motion.img
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", duration: 0.3 }}
             src="https://i.ibb.co/jZztpQ5/Linkdin.jpg"
             className="w-[350px] rounded-md"
             alt=""
           />
-          <div className="about_data">
+          <motion.div
+            initial={{ opacity: 0, x: -250 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: "spring" }}
+            className="about_data"
+          >
             <p className="about_description">
               Hello, I am MD. Akib Rahman, a fresh face in the realm of computer
               science and a budding MERN stack developer. My journey into the
@@ -88,7 +98,7 @@ const About = () => {
                 Download CV<i className="uil uil-download-alt button_icon"></i>
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

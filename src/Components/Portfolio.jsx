@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 import { FaArrowRight, FaEye } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
@@ -20,7 +21,10 @@ const Portfolio = () => {
     <div className="w-[90%] mx-auto mt-20 ">
       <div className="flex flex-col gap-10">
         {data.map((project) => (
-          <div
+          <motion.div
+            initial={{ x: 300 }}
+            animate={{ x: 0 }}
+            transition={{ type: "spring" }}
             key={project._id}
             className="flex items-center gap-10 border-l-[5px] pl-4 border-primary py-5"
           >
@@ -63,14 +67,14 @@ const Portfolio = () => {
                 <FaArrowRight className="bg-primary text-white w-8 h-8 p-2 rounded-full cursor-pointer" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
         <button
           onClick={async () => {
             const data = await axiosInstance.post("/test");
             console.log(data.data);
           }}
-          className="bg-primary px-3 py-1 text-white rounded-md"
+          className="bg-primary px-3 py-1 text-white rounded-md hidden"
         >
           Add
         </button>

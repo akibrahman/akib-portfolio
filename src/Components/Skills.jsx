@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Skills = () => {
   return (
     <div className="w-[90%] mx-auto">
@@ -18,10 +20,15 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">HTML</h3>
-                  <span className="skills_number">90%</span>
+                  <motion.span className="skills_number">90%</motion.span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_html"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "90%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_html"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -31,7 +38,12 @@ const Skills = () => {
                   <span className="skills_number">87%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_css"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "87%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_css"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -41,7 +53,12 @@ const Skills = () => {
                   <span className="skills_number">60%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_js"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "60%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_js"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -51,7 +68,12 @@ const Skills = () => {
                   <span className="skills_number">80%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_react"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "80%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_react"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -61,7 +83,12 @@ const Skills = () => {
                   <span className="skills_number">90%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_tw"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "90%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_tw"
+                  ></motion.span>
                 </div>
               </div>
             </div>
@@ -83,7 +110,12 @@ const Skills = () => {
                   <span className="skills_number">40%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_express"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "40%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_express"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -93,7 +125,12 @@ const Skills = () => {
                   <span className="skills_number">30%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_node"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "30%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_node"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -103,7 +140,12 @@ const Skills = () => {
                   <span className="skills_number">65%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_mongo"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "65%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_mongo"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -113,7 +155,12 @@ const Skills = () => {
                   <span className="skills_number">80%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_firebase"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "80%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_firebase"
+                  ></motion.span>
                 </div>
               </div>
 
@@ -123,7 +170,12 @@ const Skills = () => {
                   <span className="skills_number">90%</span>
                 </div>
                 <div className="skills_bar">
-                  <span className="skills_percentage skills_jwt"></span>
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "90%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_jwt"
+                  ></motion.span>
                 </div>
               </div>
             </div>

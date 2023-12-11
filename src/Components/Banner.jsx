@@ -1,35 +1,37 @@
+import { motion } from "framer-motion";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
-import { Link } from "react-router-dom";
 import "../Css/structure.css";
+import expressLogo from "../assets/icons/express.png";
+import reactLogo from "../assets/icons/react.png";
 import resume from "../assets/pdf/resume.pdf";
 import Social from "./Shared/Social";
+//!
 
 const Banner = () => {
   const handleDownload = () => {
-    // Construct the URL for the resume file
-    // const resumeUrl = process.env.PUBLIC_URL + '/resume.pdf';
-
-    // Create a link element
     const downloadLink = document.createElement("a");
-
-    // Set the href attribute to the resume URL
     downloadLink.href = resume;
-
-    // Set the download attribute with the desired file name
     downloadLink.download = "resume.pdf";
-
-    // Append the link to the document body
     document.body.appendChild(downloadLink);
-
-    // Trigger the click event on the link to start the download
     downloadLink.click();
-
-    // Remove the link from the document body after the download is initiated
     document.body.removeChild(downloadLink);
   };
+
+  //!
+
   return (
-    <div className="w-[90%] mx-auto">
+    <div className="w-[90%] mx-auto relative ">
+      <img
+        src={reactLogo}
+        className=" absolute top-0 -left-20 -z-10 w-72 animate-spin-slow opacity-50"
+        alt=""
+      />
+      <img
+        src={expressLogo}
+        className="absolute bottom-0 -right-16 -z-10 w-60 animate-pulse"
+        alt=""
+      />
       <section className="home section p-0" id="home">
         <div className="home_container container grid">
           <div className="home_content grid">
@@ -40,40 +42,71 @@ const Banner = () => {
             </div>
 
             <div className="home_img">
-              <img
+              <motion.img
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.9 }}
                 src="https://i.ibb.co/jZztpQ5/Linkdin.jpg"
                 className="rounded-full w-[450px] h-[450px]"
                 alt=""
               />
             </div>
             <div className="home_data">
-              <h1 className="home_title">Hi, I am Akib</h1>
+              <motion.h1
+                initial={{ opacity: 0, x: 250 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ type: "spring" }}
+                className="home_title"
+              >
+                Hi, I am Akib
+              </motion.h1>
               <h3 className="home_subtitle">
                 <span className="home_auto_type"></span>
               </h3>
-              <p className="home_description">
+              <motion.p
+                initial={{ opacity: 0, x: -250 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ type: "spring" }}
+                className="home_description"
+              >
                 With expertise in HTML, CSS, JavaScript, and responsive design,
                 I offer a comprehensive range of web design capabilities. I have
                 a meticulous eye for detail, ensuring pixel-perfect designs and
                 flawless execution.
-              </p>
+              </motion.p>
               <div className="w-max">
-                <div className="flex gap-4">
-                  <Link
+                <motion.div
+                  initial={{ opacity: 0, x: 250 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ type: "spring" }}
+                  className="flex gap-4"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.06 }}
+                    whileTap={{ scale: 0.6 }}
                     onClick={handleDownload}
-                    className="button home_button button_flex active:scale-75 flex gap-3 transition duration-300"
+                    className="button home_button button_flex flex gap-3 select-none cursor-pointer"
                   >
                     Resume
                     <FaDownload className="icon transition duration-500" />
-                  </Link>
-                  <Link className="button home_button button_flex active:scale-75 flex gap-3 transition duration-300">
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.06 }}
+                    whileTap={{ scale: 0.6 }}
+                    className="button home_button button_flex flex gap-3 select-none cursor-pointer"
+                  >
                     Hire Me
                     <FaTelegramPlane className="icon transition duration-500" />
-                  </Link>
-                </div>
-                <div className="mt-8 flex justify-center">
+                  </motion.div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -250 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ type: "spring" }}
+                  className="mt-8 flex justify-center"
+                >
                   <Social />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
