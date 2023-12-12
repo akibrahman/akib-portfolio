@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import "../Css/structure.css";
 import { ImageComponent } from "../Utils/ImageComponent";
 import expressLogo from "../assets/icons/express.png";
@@ -22,7 +23,7 @@ const Banner = () => {
   //!
 
   return (
-    <div className="w-[90%] mx-auto relative ">
+    <div className="w-[90%] mx-auto relative mt-10 md:mt-0 bg-red-60">
       <img
         src={reactLogo}
         className=" absolute top-0 -left-20 -z-10 w-72 animate-spin-slow opacity-50"
@@ -30,7 +31,7 @@ const Banner = () => {
       />
       <img
         src={expressLogo}
-        className="absolute bottom-0 -right-16 -z-10 w-60 animate-pulse"
+        className="absolute bottom-1/2 md:bottom-0 right-40 md:-right-16 -z-10 w-60 animate-pulse"
         alt=""
       />
       <section className="home section p-0" id="home">
@@ -54,7 +55,7 @@ const Banner = () => {
               <ImageComponent
                 src={"https://i.ibb.co/jZztpQ5/Linkdin.jpg"}
                 alt={"Akib Rahman"}
-                classes="rounded-full w-[450px] h-[450px]"
+                classes="rounded-full lg:w-[450px] lg:h-[450px] "
               />
             </div>
             <div className="home_data">
@@ -99,10 +100,12 @@ const Banner = () => {
                   <motion.div
                     whileHover={{ scale: 1.06 }}
                     whileTap={{ scale: 0.6 }}
-                    className="button home_button button_flex flex gap-3 select-none cursor-pointer"
+                    className="button home_button button_flex select-none cursor-pointer"
                   >
-                    Hire Me
-                    <FaTelegramPlane className="icon transition duration-500" />
+                    <Link className="flex gap-3 items-center" to="/contact">
+                      Hire Me
+                      <FaTelegramPlane className="icon transition duration-500" />
+                    </Link>
                   </motion.div>
                 </motion.div>
                 <motion.div

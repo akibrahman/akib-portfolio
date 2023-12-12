@@ -269,7 +269,7 @@ img {
   bottom: 0.5rem;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--first-color);
+  color: red;
 }
 .nav_close:hover {
   color: var(--first-color-alt);

@@ -1,9 +1,55 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import "../../Css/structure.css";
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleNavBarOpen = () => {
+    setIsOpen(true);
+  };
+  const handleNavBarClose = () => {
+    setIsOpen(false);
+  };
   return (
-    <div className="w-[90%] mx-auto">
+    <div className="w-[90%] mx-auto relative">
+      <div
+        className={`h-screen w-full absolute bg-[rgba(0.21,0.21,0.21,0.8)] z-50 ${
+          isOpen ? "" : "hidden"
+        }`}
+      >
+        <FaTimes
+          onClick={handleNavBarClose}
+          className="text-4xl absolute right-10 top-8 text-primary"
+        />
+        <ul className="flex flex-col items-center justify-center h-full text-2xl gap-8 text-white">
+          <li className="">
+            <NavLink to="/" className=" ">
+              Home
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink to="/about" className=" ">
+              About
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink to="/skills" className=" ">
+              Skills
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink to="/portfolio" className=" ">
+              Portfolio
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink to="/contact" className=" ">
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+      </div>
       <header className="" id="header">
         <nav className="nav container">
           <a href="#" className="nav_logo text-3xl">
@@ -42,14 +88,18 @@ const NavBar = () => {
                 </NavLink>
               </li>
             </ul>
-            <i className="uil uil-times nav_close" id="nav-close"></i>
+            {/* <i className="uil uil-times nav_close" id="nav-close"></i> */}
+            {/* <FaTimes className="text-primary" /> */}
           </div>
-          {/* <div className="nav_btns">
-            <i className="uil uil-moon change_theme" id="theme-button"></i>
-            <div className="nav_toggle" id="nav-toggle">
-              <i className="uil uil-apps"></i>
+          <div className="nav_btns mr-8 mt-2">
+            <div
+              onClick={handleNavBarOpen}
+              className="nav_toggle text-primary"
+              id="nav-toggle"
+            >
+              <FaBars className="text-3xl" />
             </div>
-          </div> */}
+          </div>
         </nav>
       </header>
     </div>
