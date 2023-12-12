@@ -7,25 +7,24 @@ const About = () => {
       <section className="about section p-0" id="about">
         <h2 className="section_title">About Me</h2>
         <span className="section_subtitle">My Introduction</span>
-        <div className="about_container container flex items-start">
-          {/* <motion.img
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", duration: 0.3 }}
-            src="https://i.ibb.co/jZztpQ5/Linkdin.jpg"
-            className="w-[350px] rounded-md"
-            alt=""
-          /> */}
-          <ImageComponent
-            src={"https://i.ibb.co/jZztpQ5/Linkdin.jpg"}
-            alt={"Akib Rahman"}
-            classes={"rounded-md"}
-          />
+        <div className="flex flex-col lg:flex-row gap-10">
+          <motion.div
+            initial={{ opacity: 0, x: 250 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ type: "spring" }}
+            className="w-full lg:w-[40%]"
+          >
+            <ImageComponent
+              src={"https://i.ibb.co/jZztpQ5/Linkdin.jpg"}
+              alt={"Akib Rahman"}
+              classes={"rounded-md w-full"}
+            />
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, x: -250 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring" }}
-            className="about_data"
+            className="w-full lg:w-[60%]"
           >
             <p className="about_description">
               Hello, I am MD. Akib Rahman, a fresh face in the realm of computer
@@ -94,15 +93,6 @@ const About = () => {
                   worked
                 </spna>
               </div>
-            </div>
-            <div className="about_buttons">
-              <a
-                download=""
-                href="pdf/Alexa-Cv.pdf"
-                className="button button_flex about_button"
-              >
-                Download CV<i className="uil uil-download-alt button_icon"></i>
-              </a>
             </div>
           </motion.div>
         </div>

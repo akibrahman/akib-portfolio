@@ -26,14 +26,14 @@ const Portfolio = () => {
             animate={{ x: 0 }}
             transition={{ type: "spring" }}
             key={project._id}
-            className="flex items-center gap-10 border-l-[5px] pl-4 border-primary py-5"
+            className="flex flex-col lg:flex-row items-center gap-5 md:gap-10 border-l-[5px] pl-4 border-primary py-5"
           >
             <img
               className="w-[300px] rounded-lg border-2"
               src={project.image}
               alt=""
             />
-            <div className="w-[600px] flex flex-col gap-4">
+            <div className="md:w-[600px] flex flex-col gap-4">
               <p>
                 <span className="font-bold inline-block w-[120px]">Name:</span>
                 <span className="bg-stone-300 px-3 py-1 rounded-md font-bold text-xl inline-block w-[150px] text-center">
@@ -41,25 +41,25 @@ const Portfolio = () => {
                 </span>
               </p>
               <p>
-                <span className="font-bold inline-block w-[120px]">
+                <span className="font-bold md:inline-block md:w-[120px]">
                   Description:
                 </span>
                 {project.description}
               </p>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex lg:flex-col gap-4">
               <Link target="_blank" to={project.client_link}>
-                <p className="font-bold border border-primary px-2 py-1 rounded-full">
+                <p className="font-bold border border-primary px-2 py-1 rounded-full w-max">
                   Client Repo
                 </p>
               </Link>
               <Link target="_blank" to={project.server_link}>
-                <p className="font-bold border border-primary px-2 py-1 rounded-full">
+                <p className="font-bold border border-primary px-2 py-1 rounded-full w-max">
                   Server Repo
                 </p>
               </Link>
             </div>
-            <div className="flex flex-col gap-2 flex-1 items-end">
+            <div className="flex lg:flex-col gap-2 flex-1 items-end">
               <Link target="_blank" to={project.live_link}>
                 <FaEye className="bg-primary text-white w-8 h-8 p-2 rounded-full cursor-pointer" />
               </Link>
