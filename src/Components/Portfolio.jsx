@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
+import { FaSpinner } from "react-icons/fa";
 import { FaArrowRight, FaEye } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
@@ -16,7 +17,12 @@ const Portfolio = () => {
     },
   });
 
-  if (!data) return <p>Loading........</p>;
+  if (!data)
+    return (
+      <p className="flex justify-center h-screen items-center">
+        <FaSpinner className="text-primary animate-spin text-5xl text-center" />
+      </p>
+    );
   return (
     <div className="w-[90%] mx-auto mt-20 ">
       <div className="flex flex-col gap-10">

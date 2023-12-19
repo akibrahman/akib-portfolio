@@ -14,7 +14,7 @@ const Banner = () => {
   const handleDownload = () => {
     const downloadLink = document.createElement("a");
     downloadLink.href = resume;
-    downloadLink.download = "resume.pdf";
+    downloadLink.download = "Resume of Akib Rahman.pdf";
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
@@ -76,10 +76,10 @@ const Banner = () => {
                 transition={{ type: "spring" }}
                 className="home_description"
               >
-                With expertise in HTML, CSS, JavaScript, and responsive design,
-                I offer a comprehensive range of web design capabilities. I have
-                a meticulous eye for detail, ensuring pixel-perfect designs and
-                flawless execution.
+                With expertise in JavaScript, React and Express JS. I offer a
+                comprehensive range of web development capabilities. I have a
+                meticulous eye for detail, ensuring pixel-perfect designs and
+                functional Back-ended execution.
               </motion.p>
               <div className="w-max">
                 <motion.div

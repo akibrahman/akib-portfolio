@@ -425,7 +425,7 @@ img {
 .about_info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--mb-2-5);
+  /* margin-bottom: var(--mb-2-5); */
 }
 .about_info_title {
   font-size: var(--h2-font-size);

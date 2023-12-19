@@ -17,8 +17,49 @@ const About = () => {
             <ImageComponent
               src={"https://i.ibb.co/jZztpQ5/Linkdin.jpg"}
               alt={"Akib Rahman"}
-              classes={"rounded-md w-full"}
+              classes={"rounded-md w-full bg-red-700"}
             />
+            <div className="mt-6">
+              <p className="text-xl text-primary font-semibold mb-4">
+                Studing:
+              </p>
+              <p>
+                International University of Business Agriculture and Technology
+              </p>
+              <p className="text-sm text-primary">
+                Conputer Science and Engineering
+              </p>
+            </div>
+            <div className="mt-6">
+              <p className="text-xl text-primary font-semibold mb-4">
+                Address:
+              </p>
+              <p>Uttara, Sector-10</p>
+              <p className="text-sm text-primary">Dhaka, Bangladesh</p>
+            </div>
+            <div className="about_info mt-5">
+              <div>
+                <spna className="about_info_title">06+</spna>
+                <spna className="about_info_name">
+                  Months <br />
+                  experience
+                </spna>
+              </div>
+              <div>
+                <spna className="about_info_title">3</spna>
+                <spna className="about_info_name">
+                  Completed <br />
+                  project
+                </spna>
+              </div>
+              <div>
+                <spna className="about_info_title">--</spna>
+                <spna className="about_info_name">
+                  Companies <br />
+                  worked
+                </spna>
+              </div>
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: -250 }}
@@ -71,29 +112,6 @@ const About = () => {
               growth, and the boundless possibilities that lie ahead in the
               world of computer science.
             </p>
-            <div className="about_info mt-20">
-              <div>
-                <spna className="about_info_title">06+</spna>
-                <spna className="about_info_name">
-                  Months <br />
-                  experience
-                </spna>
-              </div>
-              <div>
-                <spna className="about_info_title">10+</spna>
-                <spna className="about_info_name">
-                  Completed <br />
-                  project
-                </spna>
-              </div>
-              <div>
-                <spna className="about_info_title">--</spna>
-                <spna className="about_info_name">
-                  Companies <br />
-                  worked
-                </spna>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>

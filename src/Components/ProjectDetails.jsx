@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { FaSpinner } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -21,10 +22,14 @@ const ProjectDetails = () => {
 
   const gallery = project?.gallery;
   const features = project?.features;
-  const sFeatures = project?.specialFeatures;
+  const sFeatures = project?.specialFeatures ? project.specialFeatures : [];
 
-  if (isLoading || !project || !gallery || !features || !sFeatures)
-    return <p>Loading.........</p>;
+  if (isLoading || !project || !gallery || !features)
+    return (
+      <p className="flex justify-center h-screen items-center">
+        <FaSpinner className="text-primary animate-spin text-5xl text-center" />
+      </p>
+    );
 
   return (
     <div className="w-[90%] mx-auto my-10">
@@ -32,8 +37,22 @@ const ProjectDetails = () => {
         {project.title}
       </p>
       <Swiper
-        slidesPerView={2}
-        spaceBetween={20}
+        // slidesPerView={1}
+        // spaceBetween={20}
+
+        breakpoints={{
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+
+          // when window width is >= 640px
+          900: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        }}
         pagination={{
           clickable: true,
         }}
@@ -56,7 +75,7 @@ const ProjectDetails = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="mt-10 flex  items-center justify-around">
+      <div className="mt-10 flex flex-col gap-5 md:gap-0 md:flex-row items-center md:justify-around">
         <Link target="_blank" to={project.client_link}>
           <p className="font-bold text-white bg-primary px-5 py-2">
             Client Side Repository

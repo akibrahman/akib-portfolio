@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import NumberCounter from "number-counter";
 
 const Skills = () => {
   return (
@@ -12,7 +13,7 @@ const Skills = () => {
               <i className="uil uil-brackets-curly skills_icon"></i>
               <div className="">
                 <h1 className="skills_title">Frontend Developer</h1>
-                <span className="skills_subtitle">More than 2 years</span>
+                <span className="skills_subtitle">More than 1 year</span>
               </div>
               <i className="uil uil-angle-down skills_arrow"></i>
             </div>
@@ -20,7 +21,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">HTML</h3>
-                  <motion.span className="skills_number">90%</motion.span>
+                  <span className="skills_number">
+                    <NumberCounter end={90} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -35,7 +38,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">CSS</h3>
-                  <span className="skills_number">87%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={87} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -50,7 +55,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">JavaScript</h3>
-                  <span className="skills_number">60%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={60} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -65,7 +72,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">React</h3>
-                  <span className="skills_number">80%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={80} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -80,7 +89,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">Tailwind</h3>
-                  <span className="skills_number">90%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={90} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -107,7 +118,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">Express JS</h3>
-                  <span className="skills_number">40%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={40} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -122,7 +135,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">Node JS</h3>
-                  <span className="skills_number">30%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={30} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -137,7 +152,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">MongoDB</h3>
-                  <span className="skills_number">65%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={65} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -152,7 +169,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">Firebase</h3>
-                  <span className="skills_number">80%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={80} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
@@ -167,7 +186,9 @@ const Skills = () => {
               <div className="skills_data">
                 <div className="skills_titles">
                   <h3 className="skills_name">JWT</h3>
-                  <span className="skills_number">90%</span>
+                  <span className="skills_number">
+                    <NumberCounter end={90} delay={1} postFix="%" />
+                  </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span

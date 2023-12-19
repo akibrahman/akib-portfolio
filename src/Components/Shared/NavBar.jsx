@@ -23,27 +23,27 @@ const NavBar = () => {
           className="text-4xl absolute right-10 top-8 text-primary"
         />
         <ul className="flex flex-col items-center justify-center h-full text-2xl gap-8 text-white">
-          <li className="">
+          <li onClick={handleNavBarClose} className="">
             <NavLink to="/" className=" ">
               Home
             </NavLink>
           </li>
-          <li className="">
+          <li onClick={handleNavBarClose} className="">
             <NavLink to="/about" className=" ">
               About
             </NavLink>
           </li>
-          <li className="">
+          <li onClick={handleNavBarClose} className="">
             <NavLink to="/skills" className=" ">
               Skills
             </NavLink>
           </li>
-          <li className="">
+          <li onClick={handleNavBarClose} className="">
             <NavLink to="/portfolio" className=" ">
               Portfolio
             </NavLink>
           </li>
-          <li className="">
+          <li onClick={handleNavBarClose} className="">
             <NavLink to="/contact" className=" ">
               Contact
             </NavLink>
@@ -97,7 +97,7 @@ const NavBar = () => {
               className="nav_toggle text-primary"
               id="nav-toggle"
             >
-              <FaBars className="text-3xl" />
+              <FaBars className={`text-3xl ${isOpen ? "hidden" : "block"}`} />
             </div>
           </div>
         </nav>
