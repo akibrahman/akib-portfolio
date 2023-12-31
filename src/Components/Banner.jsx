@@ -6,7 +6,7 @@ import "../Css/structure.css";
 import { ImageComponent } from "../Utils/ImageComponent";
 import expressLogo from "../assets/icons/express.png";
 import reactLogo from "../assets/icons/react.png";
-import resume from "../assets/pdf/resume.pdf";
+import resume from "../assets/pdf/Akib_Resume.pdf";
 import Social from "./Shared/Social";
 //!
 
