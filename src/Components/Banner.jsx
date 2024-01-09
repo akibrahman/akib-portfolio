@@ -6,11 +6,12 @@ import "../Css/structure.css";
 import { ImageComponent } from "../Utils/ImageComponent";
 import expressLogo from "../assets/icons/express.png";
 import reactLogo from "../assets/icons/react.png";
-import resume from "../assets/pdf/Akib's Resume.pdf";
 import Social from "./Shared/Social";
 //!
 
 const Banner = () => {
+  const resume =
+    "https://drive.google.com/uc?export=download&id=1_PomyXfyWstNM7B7vlmTsWXG0CPLW5bi";
   const handleDownload = () => {
     const downloadLink = document.createElement("a");
     downloadLink.href = resume;
