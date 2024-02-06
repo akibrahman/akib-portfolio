@@ -6,42 +6,28 @@ const Contact = () => {
   const handleContact = async (event) => {
     event.preventDefault();
     const data = event.target;
-    mail(
-      data.name.value,
-      data.email.value,
-      data.message.value,
-      data.project.value
-    )
-      .then(() => {
-        console.log("E-mail Sent");
-        toast.success("Your message is sent");
-        data.reset();
-      })
-      .catch(() => {
-        console.log("Something Went Wrong");
-      });
-  };
-  const mail = async (name, email, message, project) => {
-    emailjs
-      .send(
-        "service_g6cvxq2",
-        "template_ig89126",
+    try {
+      const res = await emailjs.send(
+        "service_6r13o08",
+        "template_lvruas7",
         {
-          v_name: name,
-          v_email: email,
-          v_message: message,
-          v_project: project,
-          reply_to: email,
+          s_name: data.name.value,
+          s_email: data.email.value,
+          s_message: data.message.value,
+          s_project: data.project.value,
+          reply_to: data.email.value,
         },
-        "7KRV2RNgMFhMkRBxQ"
-      )
-      .then((res) => {
-        return res;
-      })
-      .catch((error) => {
-        return error;
-      });
+        "je6Fm4znugeFRfWBn"
+      );
+      console.log("Emqail Res: ", res);
+      toast.success("E-mail Sent Successfully");
+    } catch (error) {
+      console.log("Email Error: ", error);
+      toast.error("Something Went Wrong");
+    }
+    data.reset();
   };
+
   return (
     <div className="w-[90%] mx-auto mt-2">
       <section className="contact section p-0" id="contact">
