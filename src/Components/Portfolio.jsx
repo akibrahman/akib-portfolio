@@ -38,8 +38,13 @@ const Portfolio = () => {
             <ImageComponent
               src={project.image}
               alt={project.title}
-              classes={"w-[300px] rounded-lg border-2]"}
+              classes={"w-[300px] h-[140px] rounded-lg border-2]"}
             />
+            {/* <img
+              className="w-[300px] h-[140px] rounded-lg border-2"
+              src={project.image}
+              alt=""
+            /> */}
             <div className="md:w-[600px] flex flex-col gap-4">
               <p>
                 <span className="font-bold inline-block w-[120px]">Name:</span>

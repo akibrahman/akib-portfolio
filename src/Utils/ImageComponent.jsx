@@ -10,7 +10,7 @@ export const ImageComponent = ({ src, alt, classes }) => {
   };
 
   return (
-    <div style={{ position: "relative", width: "100%" }} className={classes}>
+    <div style={{ position: "relative" }} className={classes}>
       {!isLoaded && <PlaceholderImage classes={classes} />}
       <img
         src={src}

@@ -20,6 +20,56 @@ const Skills = () => {
             <div className="skills_list grid">
               <div className="skills_data">
                 <div className="skills_titles">
+                  <h3 className="skills_name">React JS</h3>
+                  <span className="skills_number">
+                    <NumberCounter end={80} delay={1} postFix="%" />
+                  </span>
+                </div>
+                <div className="skills_bar">
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "80%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_react"
+                  ></motion.span>
+                </div>
+              </div>
+              <div className="skills_data">
+                <div className="skills_titles">
+                  <h3 className="skills_name">JavaScript</h3>
+                  <span className="skills_number">
+                    <NumberCounter end={60} delay={1} postFix="%" />
+                  </span>
+                </div>
+                <div className="skills_bar">
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "60%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_js"
+                  ></motion.span>
+                </div>
+              </div>
+
+              <div className="skills_data">
+                <div className="skills_titles">
+                  <h3 className="skills_name">Tailwind</h3>
+                  <span className="skills_number">
+                    <NumberCounter end={90} delay={1} postFix="%" />
+                  </span>
+                </div>
+                <div className="skills_bar">
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "90%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_tw"
+                  ></motion.span>
+                </div>
+              </div>
+
+              <div className="skills_data">
+                <div className="skills_titles">
                   <h3 className="skills_name">HTML</h3>
                   <span className="skills_number">
                     <NumberCounter end={90} delay={1} postFix="%" />
@@ -51,57 +101,6 @@ const Skills = () => {
                   ></motion.span>
                 </div>
               </div>
-
-              <div className="skills_data">
-                <div className="skills_titles">
-                  <h3 className="skills_name">JavaScript</h3>
-                  <span className="skills_number">
-                    <NumberCounter end={60} delay={1} postFix="%" />
-                  </span>
-                </div>
-                <div className="skills_bar">
-                  <motion.span
-                    initial={{ width: 0 }}
-                    animate={{ width: "60%" }}
-                    transition={{ type: "spring" }}
-                    className="skills_percentage skills_js"
-                  ></motion.span>
-                </div>
-              </div>
-
-              <div className="skills_data">
-                <div className="skills_titles">
-                  <h3 className="skills_name">React</h3>
-                  <span className="skills_number">
-                    <NumberCounter end={80} delay={1} postFix="%" />
-                  </span>
-                </div>
-                <div className="skills_bar">
-                  <motion.span
-                    initial={{ width: 0 }}
-                    animate={{ width: "80%" }}
-                    transition={{ type: "spring" }}
-                    className="skills_percentage skills_react"
-                  ></motion.span>
-                </div>
-              </div>
-
-              <div className="skills_data">
-                <div className="skills_titles">
-                  <h3 className="skills_name">Tailwind</h3>
-                  <span className="skills_number">
-                    <NumberCounter end={90} delay={1} postFix="%" />
-                  </span>
-                </div>
-                <div className="skills_bar">
-                  <motion.span
-                    initial={{ width: 0 }}
-                    animate={{ width: "90%" }}
-                    transition={{ type: "spring" }}
-                    className="skills_percentage skills_tw"
-                  ></motion.span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -119,13 +118,13 @@ const Skills = () => {
                 <div className="skills_titles">
                   <h3 className="skills_name">Express JS</h3>
                   <span className="skills_number">
-                    <NumberCounter end={40} delay={1} postFix="%" />
+                    <NumberCounter end={60} delay={1} postFix="%" />
                   </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
                     initial={{ width: 0 }}
-                    animate={{ width: "40%" }}
+                    animate={{ width: "60%" }}
                     transition={{ type: "spring" }}
                     className="skills_percentage skills_express"
                   ></motion.span>
@@ -134,32 +133,15 @@ const Skills = () => {
 
               <div className="skills_data">
                 <div className="skills_titles">
-                  <h3 className="skills_name">Node JS</h3>
-                  <span className="skills_number">
-                    <NumberCounter end={30} delay={1} postFix="%" />
-                  </span>
-                </div>
-                <div className="skills_bar">
-                  <motion.span
-                    initial={{ width: 0 }}
-                    animate={{ width: "30%" }}
-                    transition={{ type: "spring" }}
-                    className="skills_percentage skills_node"
-                  ></motion.span>
-                </div>
-              </div>
-
-              <div className="skills_data">
-                <div className="skills_titles">
                   <h3 className="skills_name">MongoDB</h3>
                   <span className="skills_number">
-                    <NumberCounter end={65} delay={1} postFix="%" />
+                    <NumberCounter end={60} delay={1} postFix="%" />
                   </span>
                 </div>
                 <div className="skills_bar">
                   <motion.span
                     initial={{ width: 0 }}
-                    animate={{ width: "65%" }}
+                    animate={{ width: "60%" }}
                     transition={{ type: "spring" }}
                     className="skills_percentage skills_mongo"
                   ></motion.span>
@@ -196,6 +178,23 @@ const Skills = () => {
                     animate={{ width: "90%" }}
                     transition={{ type: "spring" }}
                     className="skills_percentage skills_jwt"
+                  ></motion.span>
+                </div>
+              </div>
+
+              <div className="skills_data">
+                <div className="skills_titles">
+                  <h3 className="skills_name">Node JS</h3>
+                  <span className="skills_number">
+                    <NumberCounter end={30} delay={1} postFix="%" />
+                  </span>
+                </div>
+                <div className="skills_bar">
+                  <motion.span
+                    initial={{ width: 0 }}
+                    animate={{ width: "30%" }}
+                    transition={{ type: "spring" }}
+                    className="skills_percentage skills_node"
                   ></motion.span>
                 </div>
               </div>
