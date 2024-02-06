@@ -4,6 +4,7 @@ import { FaSpinner } from "react-icons/fa";
 import { FaArrowRight, FaEye } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { ImageComponent } from "../Utils/ImageComponent";
 
 const Portfolio = () => {
   const axiosInstance = useAxiosPublic();
@@ -34,10 +35,10 @@ const Portfolio = () => {
             key={project._id}
             className="flex flex-col lg:flex-row items-center gap-5 md:gap-10 border-l-[5px] pl-4 border-primary py-5"
           >
-            <img
-              className="w-[300px] rounded-lg border-2"
+            <ImageComponent
               src={project.image}
-              alt=""
+              alt={project.title}
+              classes={"w-[300px] rounded-lg border-2]"}
             />
             <div className="md:w-[600px] flex flex-col gap-4">
               <p>

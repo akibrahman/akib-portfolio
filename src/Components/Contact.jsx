@@ -8,8 +8,8 @@ const Contact = () => {
     const data = event.target;
     try {
       const res = await emailjs.send(
-        "service_6r13o08",
-        "template_lvruas7",
+        import.meta.env.VITE_emailjs_service_id,
+        import.meta.env.VITE_emailjs_template_id,
         {
           s_name: data.name.value,
           s_email: data.email.value,
@@ -17,7 +17,7 @@ const Contact = () => {
           s_project: data.project.value,
           reply_to: data.email.value,
         },
-        "je6Fm4znugeFRfWBn"
+        import.meta.env.VITE_emailjs_public_key
       );
       console.log("Emqail Res: ", res);
       toast.success("E-mail Sent Successfully");
