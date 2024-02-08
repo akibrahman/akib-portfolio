@@ -40,7 +40,7 @@ const Contact = () => {
               <div className="">
                 <h3 className="contact_title">Call Me</h3>
                 <span className="contact_subtitle">
-                  <a href="tel:+8801709605097">01709-605097</a>
+                  <a href="tel:+8801709605097">+88 01709-605097</a>
                 </span>
               </div>
             </div>

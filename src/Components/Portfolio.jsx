@@ -9,7 +9,7 @@ import { ImageComponent } from "../Utils/ImageComponent";
 const Portfolio = () => {
   const axiosInstance = useAxiosPublic();
 
-  const { data } = useQuery({
+  const { data: projects } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
       const { data } = await axiosInstance.get("/all-projects");
@@ -17,8 +17,9 @@ const Portfolio = () => {
       return projects;
     },
   });
+  projects?.sort((a, b) => a.serial - b.serial);
 
-  if (!data)
+  if (!projects)
     return (
       <p className="flex justify-center h-screen items-center">
         <FaSpinner className="text-primary animate-spin text-5xl text-center" />
@@ -27,7 +28,7 @@ const Portfolio = () => {
   return (
     <div className="w-[90%] mx-auto mt-20 ">
       <div className="flex flex-col gap-10">
-        {data.map((project) => (
+        {projects.map((project) => (
           <motion.div
             initial={{ x: 300 }}
             animate={{ x: 0 }}
