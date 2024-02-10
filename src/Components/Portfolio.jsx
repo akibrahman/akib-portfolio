@@ -26,7 +26,9 @@ const Portfolio = () => {
       </p>
     );
   return (
-    <div className="w-[90%] mx-auto mt-20 ">
+    <div className="w-[90%] mx-auto">
+      <h2 className="section_title">My Projects</h2>
+      <span className="section_subtitle mb-6">My Productions</span>
       <div className="flex flex-col gap-10">
         {projects.map((project) => (
           <motion.div
@@ -49,7 +51,7 @@ const Portfolio = () => {
             <div className="md:w-[600px] flex flex-col gap-4">
               <p>
                 <span className="font-bold inline-block w-[120px]">Name:</span>
-                <span className="bg-stone-300 px-3 py-1 rounded-md font-bold text-xl inline-block w-[150px] text-center">
+                <span className="bg-stone-300 px-3 py-1 rounded-md font-bold text-xl inline-block w-[180px] text-center">
                   {project.title}
                 </span>
               </p>

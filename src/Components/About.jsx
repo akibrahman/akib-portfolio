@@ -46,7 +46,7 @@ const About = () => {
                 </spna>
               </div>
               <div>
-                <spna className="about_info_title">3</spna>
+                <spna className="about_info_title">5+</spna>
                 <spna className="about_info_name">
                   Completed <br />
                   project
