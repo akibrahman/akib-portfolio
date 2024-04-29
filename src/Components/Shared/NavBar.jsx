@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { toast } from "react-toastify";
 import "../../Css/structure.css";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
@@ -58,7 +57,7 @@ const NavBar = () => {
           <a href="#" className="nav_logo text-3xl">
             Akib Rahman
           </a>
-          <button
+          {/* <button
             className="bg-primary text-white px-4 py-2 rounded-md duration-300 active:scale-90"
             onClick={async () => {
               await axiosInstance.post("/test");
@@ -66,7 +65,7 @@ const NavBar = () => {
             }}
           >
             Test
-          </button>
+          </button> */}
           <div className="nav_menu" id="nav-menu">
             <ul className="nav_list ">
               <li className="nav_item">

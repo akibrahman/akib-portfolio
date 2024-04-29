@@ -871,11 +871,12 @@ img {
 .contact_content {
   background-color: var(--input-color);
   border-radius: 0.5rem;
-  padding: 0.74rem 1rem 0.25rem;
+  /* padding: 0.74rem 1rem 0.25rem; */
 }
 .contact_label {
   font-size: var(--smaller-font-size);
   color: var(--title-color);
+  padding: 8px;
 }
 .contact_input {
   width: 100%;
@@ -883,7 +884,7 @@ img {
   color: var(--title-color);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  border: none;
+  /* border: none; */
   outline: none;
   padding: 0.25rem 0.5rem 0.5rem 0;
 }

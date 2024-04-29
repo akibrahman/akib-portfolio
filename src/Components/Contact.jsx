@@ -1,31 +1,33 @@
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import { ImSpinner9 } from "react-icons/im";
 import { toast } from "react-toastify";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 import Social from "./Shared/Social";
 
 const Contact = () => {
+  const axiosInstance = useAxiosPublic();
+  const [loading, setLoading] = useState(false);
   const handleContact = async (event) => {
+    setLoading(true);
     event.preventDefault();
-    const data = event.target;
+    const form = event.target;
     try {
-      const res = await emailjs.send(
-        import.meta.env.VITE_emailjs_service_id,
-        import.meta.env.VITE_emailjs_template_id,
-        {
-          s_name: data.name.value,
-          s_email: data.email.value,
-          s_message: data.message.value,
-          s_project: data.project.value,
-          reply_to: data.email.value,
-        },
-        import.meta.env.VITE_emailjs_public_key
-      );
-      console.log("Emqail Res: ", res);
+      const emailData = {
+        senderName: form.name.value,
+        senderEmail: form.email.value,
+        senderMessage: form.message.value,
+        senderProject: form.project.value,
+      };
+      const { data } = await axiosInstance.post("/send-email", emailData);
+      console.log("Emqail Res: ", data);
       toast.success("E-mail Sent Successfully");
     } catch (error) {
       console.log("Email Error: ", error);
       toast.error("Something Went Wrong");
+    } finally {
+      form.reset();
+      setLoading(false);
     }
-    data.reset();
   };
 
   return (
@@ -93,7 +95,7 @@ const Contact = () => {
                   // id="f_name"
                   name="name"
                   type="text"
-                  className="contact_input"
+                  className="contact_input bg-white p-4 rounded-xl border-y border-[#F5372D]"
                   required
                 />
               </div>
@@ -103,7 +105,7 @@ const Contact = () => {
                   // id="f_email"
                   name="email"
                   type="email"
-                  className="contact_input"
+                  className="contact_input bg-white p-4 rounded-xl border-y border-[#F5372D]"
                   required
                 />
               </div>
@@ -114,7 +116,7 @@ const Contact = () => {
                 // id="f_project"
                 name="project"
                 type="text"
-                className="contact_input"
+                className="contact_input bg-white p-4 rounded-xl border-y border-[#F5372D]"
                 required
               />
             </div>
@@ -125,15 +127,15 @@ const Contact = () => {
                 name="message"
                 cols="0"
                 rows="7"
-                className="contact_input"
+                className="contact_input bg-white p-4 rounded-xl border-y border-[#F5372D]"
                 required
               ></textarea>
             </div>
-            <button
-              className="button button_flex contact_button"
-              //   onclick="sendMail()"
-            >
+            <button className="button button_flex contact_button duration-300">
               Send Message
+              {loading && (
+                <ImSpinner9 className="text-xl text-white animate-spin ml-5" />
+              )}
               <i className="uil uil-message button_icon"></i>
             </button>
           </form>
