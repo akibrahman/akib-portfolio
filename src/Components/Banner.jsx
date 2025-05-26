@@ -54,7 +54,7 @@ const Banner = () => {
                 alt=""
               /> */}
               <ImageComponent
-                src={"https://i.ibb.co/jZztpQ5/Linkdin.jpg"}
+                src={'/akib.jpg'}
                 alt={"Akib Rahman"}
                 classes="rounded-full lg:w-[450px] lg:h-[450px] "
               />

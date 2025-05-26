@@ -19,7 +19,7 @@ export const ImageComponent = ({ src, alt, classes }) => {
         style={{
           display: isLoaded ? "block" : "none",
         }}
-        className={classes}
+        className={`${classes}`}
       />
     </div>
   );

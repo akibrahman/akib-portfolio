@@ -38,11 +38,16 @@ const Portfolio = () => {
             key={project._id}
             className="flex flex-col lg:flex-row items-center gap-5 md:gap-10 border-l-[5px] pl-4 border-primary py-5"
           >
-            <ImageComponent
-              src={project.image}
-              alt={project.title}
-              classes={"w-[300px] h-[140px] rounded-lg border-2]"}
-            />
+            {project.title.toLowerCase().includes("android") ?
+              <ImageComponent
+                src={project.image}
+                alt={project.title}
+                classes={"h-[300px] w-[140px] rounded-lg border-2]"}
+              /> : <ImageComponent
+                src={project.image}
+                alt={project.title}
+                classes={"w-[300px] h-[140px] rounded-lg border-2]"}
+              />}
             {/* <img
               className="w-[300px] h-[140px] rounded-lg border-2"
               src={project.image}

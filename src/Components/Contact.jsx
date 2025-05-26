@@ -1,25 +1,40 @@
 import { useState } from "react";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { ImSpinner9 } from "react-icons/im";
 import { toast } from "react-toastify";
 import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { imageToBase64 } from "../Utils/imageToBase64";
+import { imageUploader } from "../Utils/imageUploder";
+import { makeFile } from "../Utils/makeFile";
+import imgAddIcon from "../assets/image/imageAddIcon.png";
 import Social from "./Shared/Social";
 
 const Contact = () => {
   const axiosInstance = useAxiosPublic();
   const [loading, setLoading] = useState(false);
+  const [formImages, setFormImages] = useState([]);
   const handleContact = async (event) => {
     setLoading(true);
     event.preventDefault();
     const form = event.target;
     try {
+      let images = [];
+      if (formImages.length > 0) {
+        for (let index = 0; index < formImages.length; index++) {
+          const link = await imageUploader(await makeFile(formImages[index]));
+          images.push(link);
+        }
+      }
       const emailData = {
         senderName: form.name.value,
         senderEmail: form.email.value,
         senderMessage: form.message.value,
         senderProject: form.project.value,
+        images,
       };
       const { data } = await axiosInstance.post("/send-email", emailData);
       console.log("Emqail Res: ", data);
+      setFormImages([]);
       toast.success("E-mail Sent Successfully");
     } catch (error) {
       console.log("Email Error: ", error);
@@ -130,6 +145,47 @@ const Contact = () => {
                 className="contact_input bg-white p-4 rounded-xl border-y border-[#F5372D]"
                 required
               ></textarea>
+            </div>
+            <div className="contact_content w-[90%] md:w-full">
+              <label className="contact_label">
+                Images<span className="text-[10px] ml-3">(optional)</span>
+              </label>
+              <div className="">
+                <div className="grid grid-cols-3 gap-4 p-4">
+                  {formImages.map((image, i) => (
+                    <img
+                      src={image}
+                      key={i}
+                      alt="Image from user"
+                      className="w-36 h-20 rounded-md"
+                    />
+                  ))}
+                </div>
+                <input
+                  onChange={async (e) => {
+                    setFormImages([
+                      ...formImages,
+                      await imageToBase64(e.target.files[0]),
+                    ]);
+                  }}
+                  type="file"
+                  name=""
+                  id="img"
+                  accept="image/jpg,image/jpeg,image/png"
+                  className="hidden"
+                />
+                <label htmlFor="img" className="m-10 flex items-center gap-4">
+                  <img
+                    src={imgAddIcon}
+                    alt="Image Add Icon"
+                    className="w-14 h-14 cursor-pointer duration-300 active:scale-90 border border-[#F5372D] p-1 rounded-md"
+                  />
+                  <span className="flex items-center gap-2">
+                    <FaArrowLeftLong className="animate-pulse" /> Click here to
+                    add Image
+                  </span>
+                </label>
+              </div>
             </div>
             <button className="button button_flex contact_button duration-300">
               Send Message

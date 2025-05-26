@@ -876,7 +876,7 @@ img {
 .contact_label {
   font-size: var(--smaller-font-size);
   color: var(--title-color);
-  padding: 8px;
+  padding: 10px;
 }
 .contact_input {
   width: 100%;
