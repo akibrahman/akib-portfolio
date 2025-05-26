@@ -146,7 +146,8 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            <div className="contact_content w-[90%] md:w-full">
+            {/*//TODO: Images  */}
+            {/* <div className="contact_content w-[90%] md:w-full">
               <label className="contact_label">
                 Images<span className="text-[10px] ml-3">(optional)</span>
               </label>
@@ -186,7 +187,7 @@ const Contact = () => {
                   </span>
                 </label>
               </div>
-            </div>
+            </div> */}
             <button className="button button_flex contact_button duration-300">
               Send Message
               {loading && (
